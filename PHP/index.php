@@ -1,42 +1,40 @@
 <?php
-    $a = 10;//integer
-    $b = 4.12;//float
-    $c = "Hello World";//string
-    $k = true;//boolean
+    $a = 25;                    //integer
+    $b = 3.45;                  //float
+    $c = "Hello, I`m Vlad.";    //string
+    $d = true;                  //boolean
+    
     echo "$a" . "<br>";
+
+    if($a > $b){
+        echo "First is bigger" . "</br>";
+    }
+    else{
+        echo "Second is bigger" . "</br>";
+    }
+    
     $array = array(
-        'John',
-        'Wick',
-        'Hero',
-    );//array
-    for($i = 0; $i < count($array); $i++){
+        'Table',
+        'Chair',
+        'Bed',
+        'Sofa',);           
+
+    for($i = 0; $i < count($array); $i++)
+    {
         echo "{$array[$i]}" . "<br>";
     }
+
     $f = [
-        'name' => 'Arsenii',
-        'surname' => 'Mets',
-        'education' => 'kpi',
-    ];//multi-dimension array
+        'name' => 'Владислав',
+        'surname' => 'Мітлицький',
+        'education' => 'КПІ ТІ-02',
+    ];                         
+    
     foreach ($f as $name => $answer) {
         echo "{$name} data: $answer" . '<br>';
     }
-    if($a > $b){
-        echo "First is bigger" . "</br>";
-    }else{
-        echo "Second is bigger" . "</br>";
-    }
-    $textel = "6";
-    $el = 6;
-    if($textel === $el){
-       echo "Equal by all means" . "</br>";
-    }else if($textel = $el){
-        echo "Equal by values" . "</br>";
-    }else{
-        echo "Variables aren't equal at all";
-    }
-
-    var_dump($textel + $el);
-    class Human{
+    
+    class Person{
         private $name;
         private $surname;
         private $age;
@@ -64,7 +62,7 @@
             $this->age = $age;
         }
     }
-    class Man extends Human{
+    class Man extends Person{
         private $male;
         private $mindset;
         public function __constructor($male, $mindset){
@@ -88,15 +86,8 @@
             return self::$_instance;
         }
     }
-    $inst1 = Singleton::getInstance();
-    $inst2 = Singleton::getInstance();
-    if(inst1 === inst2){
-        echo "<br>Instances are same";
-    }else{
-        echo "<br>Instances are different";
-    }
 
-    $person = new Human;
-    $person->setName(Arsenii);
+    $person = new Person;
+    $person->setName(Vladislav);
     $name = $person->getName();
     echo "<br>" . "$name";
